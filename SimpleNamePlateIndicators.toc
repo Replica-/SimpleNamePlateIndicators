@@ -1,0 +1,9 @@
+## Interface: 100005
+## Version: 1.0.0
+## Title: SimpleNamePlateIndicators
+## Notes: Just simple HP amount in K's
+## Author: Slouchy
+## SavedVariables: 
+## X-Curse-Project-ID: 
+
+SimpleNamePlateIndicators.lua
