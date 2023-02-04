@@ -23,7 +23,7 @@ if not frame.health then
 
     local dps_frame = CreateFrame("Frame", nil, frame)
     dps_frame:SetSize(24, 24)
-    dps_frame:SetPoint("RIGHT", 15, 0)
+    dps_frame:SetPoint("RIGHT", 15, -5)
     local DpsTexture = dps_frame:CreateTexture("texture", "background")
     DpsTexture:SetPoint("CENTER")
     DpsTexture:SetSize(24, 24)
@@ -31,7 +31,8 @@ if not frame.health then
     DpsTexture:SetAllPoints(dps_frame)
     DpsTexture:Show()
     frame.DpsTexture = DpsTexture
-    frame.DpsTexture:SetTexture("Interface\\PVPScoreboard\\PVPScoreboardColumnStats.PNG")
+    --frame.DpsTexture:SetTexture("Interface\\PVPScoreboard\\PVPScoreboardColumnStats.PNG")
+    
 end
 
 frame.health.text:SetFont("FONTS\\FRIZQT__.TTF", 8, "OUTLINE")
@@ -40,15 +41,19 @@ local englishFaction, localizedFaction = UnitFactionGroup(frame.unit)
 
 if (englishFaction == 'Alliance') then
     frame.DpsTexture:Show()
+    frame.DpsTexture:SetTexture("Interface\\TargetingFrame\\UI-PVP-ALLIANCE")
     --left right top bottom
-    frame.DpsTexture:SetTexCoord(0,0.25,0,0.25)
+    --frame.DpsTexture:SetTexCoord(0,0.25,0,0.25)
 elseif (englishFaction == 'Horde') then
     frame.DpsTexture:Show()
-    frame.DpsTexture:SetTexCoord(0,0.25,0.25,0.50)
+    frame.DpsTexture:SetTexture("Interface\\TargetingFrame\\UI-PVP-HORDE")
+    --frame.DpsTexture:SetTexCoord(0,0.25,0.25,0.50)
 else 
      frame.DpsTexture:Hide()
 end
 	
+--    Alliance   = "|TInterface\\TargetingFrame\\UI-PVP-ALLIANCE:14:14:0:0:64:64:10:36:2:38|t",
+    --Horde      = "|TInterface\\TargetingFrame\\UI-PVP-HORDE:14:14:0:0:64:64:4:38:2:36|t",
 
 frame.health.text:SetText(math.floor(UnitHealth(frame.unit)/1000) .. ' K / ' .. math.floor(UnitHealthMax(frame.unit)/1000) .. ' K' ) -- Update health numbers + percentages (player.)
 frame.health.text:Show() -- Thanks Blizzard...
