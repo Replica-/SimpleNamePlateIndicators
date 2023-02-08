@@ -45,9 +45,12 @@ hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)
 
 
             frame.selectionHighlightTwo.tex = frame.selectionHighlightTwo:CreateTexture('_text','ARTWORK')
-            frame.selectionHighlightTwo.tex:SetPoint("BOTTOM")
+            frame.selectionHighlightTwo.tex:SetPoint("TOP")
 	        frame.selectionHighlightTwo.tex:SetSize(132, 25)
-	        frame.selectionHighlightTwo.tex:SetColorTexture(1,1,1,0.15);
+	        --frame.selectionHighlightTwo.tex:SetColorTexture(1,1,1,0.15);
+            frame.selectionHighlightTwo.tex:SetTexture("Interface/Tooltips/UI-Tooltip-Background")
+            frame.selectionHighlightTwo.tex:SetGradient("VERTICAL", CreateColor(1, 1, 1, 0), CreateColor(1, 1, 1, 1))
+            --frame.selectionHighlightTwo.tex:SetGradientAlpha("VERTICAL", 0, 0, 0, 0, 0, 0, 0, .6)
 
             frame.health:SetSize(170,16)
             frame.health.text = frame.health.text or frame.health:CreateFontString(nil, "OVERLAY")
