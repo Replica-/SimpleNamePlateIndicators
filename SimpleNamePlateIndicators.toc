@@ -1,4 +1,4 @@
-## Interface: 100010
+## Interface: 100015
 ## Version: 1.0.0
 ## Title: SimpleNamePlateIndicators
 ## Notes: Just simple HP amount in K's
